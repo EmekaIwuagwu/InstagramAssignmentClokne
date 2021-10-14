@@ -61,7 +61,7 @@ const MyRegister = () =>{
                 </div>
             </div>
                 <div className="sign_account">
-                <p align="center"><font face="Arial"/>Have account? <Link to="/login-page">Sign In!</Link></p>
+                <p align="center"><font face="Arial"/>Have account? <Link to="/">Sign In!</Link></p>
                 </div>
                 <div className="get_app">
                     <p align="center"><font face="Arial"/> Get The app</p>

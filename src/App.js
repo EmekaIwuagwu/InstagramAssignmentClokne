@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
         <Switch>
-            <Route path = '/login-page' component={MyLogin} exact/>
+            <Route path = '/' component={MyLogin} exact/>
             <Route path = '/register' component={MyRegister} />
             <Route path = '/dashboard' component={MyDashBoard} />
             <Route path = '/followers' component={Followers} />
