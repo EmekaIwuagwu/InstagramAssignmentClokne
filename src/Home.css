@@ -1,0 +1,272 @@
+body{
+background-color: #FAFAFA;
+}
+
+.instagramlogo{
+float: left;
+width: 370px;
+height:584px;
+}
+
+.btnSignout{
+width : 27px;
+height :25px;
+float: left;
+background-color: #FFFFFF;
+border: none;
+}
+
+.btn{
+width : 30px;
+height : 28px;
+float: right;
+background-color: #FFFFFF;
+border: none;
+}
+
+.logoutBtn{
+border: none;
+border-style: none;
+float : left;
+}
+
+.homeBtn{
+border: none;
+border-style: none;
+float : left;  
+}
+
+.login_page{
+margin-top: 17px;
+float: right;
+height:301px; 
+width:409px; 
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+background-color:#FFFFFF; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px;
+}
+
+.fileUploaderClass{
+margin-right: 30px;
+}
+
+.postButton{
+margin-top: 8px;
+border:medium none; 
+float: right; 
+color:#FFFFFF; 
+font-family:Tahoma; 
+font-size:10pt; 
+font-weight:bold; 
+background-color:#0080C0; 
+width:178px; 
+height:24px;
+}
+
+.feedsTable{
+margin-top: 13px;
+background-color: #FFFFFF;
+border: 1px solid #C3C3C3; 
+border-radius:5px; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px;
+}
+
+.postsTable{
+margin-top: 9px;
+border:0px;
+width:29%;
+height:113px;
+background-color: #FFFFFF;
+border: 1px solid #C3C3C3; 
+border-radius:5px; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px;
+}
+
+.register_page{
+margin-top: 17px;
+float: right;
+height:390px; 
+width: 334px; 
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+background-color:#FFFFFF; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px;
+}
+
+.InstagramLogo{
+display:block;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+.inputBox{
+border: 1px solid #C0C0C0; 
+width:241px;
+height:34px; 
+border-radius:3px; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px; 
+background-color:#FAFAFA;
+}
+
+.BtnLoginClass{
+border:medium none;
+color: #FFFFFF; 
+width:241px;
+height:36px;
+background-color: #0095F6;
+border-radius:3px; 
+font-family:Arial; 
+font-size:10pt; 
+font-weight:bold
+}
+
+.forgotPassword{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:200;
+margin-top: 5px;
+font: Arial;
+size: 2px;
+}
+
+.No_account{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:200;
+margin-top: 22px;
+float: right;
+width:410px;
+height:45px;
+background-color:#FFFFFF;
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.sign_account{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:200;
+margin-top: 22px;
+float: right;
+width:335px;
+height:45px;
+background-color:#FFFFFF;
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.get_app{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight:200;
+margin-top: 22px;
+float: right;
+width:410px;
+height:22px;
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.followDiv{
+width: 100%;
+border:0px;
+float: right;
+}
+
+.photoMain{
+margin-top: 4px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+object-fit: contain;
+}
+
+.PlayStoreAppStoreArea{
+margin-top: 30px;
+float: right;
+width:410px;
+height:45px;
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.RegPlayStoreAppStoreArea{
+margin-top: 19px;
+float: right;
+width:340px;
+height:45px;
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.headerTable{
+width: 100%;
+background-color: #FFFFFF;
+margin-top: 0px;
+border-bottom : 1px solid #C3C3C3;
+}
+
+.logo{
+margin-right: 48px;
+margin-top: 8px;
+float: left;
+width: 103px;
+height: 29px;
+}
+
+.homeicon{
+margin-top: 8px;
+margin-left: 42px;
+float: right;
+width: 27px;
+height: 25px;
+}
+
+.logoutIcon{
+margin-top: 8px;
+margin-left: 42px;
+float: right;
+justify-content: space-between;
+width: 27px;
+height: 25px;
+}
+
+.textArea{
+display:block;
+margin-left: auto;
+margin-right: auto;
+border-radius:3px;
+border-left-width: 1px; 
+border-right-width: 1px; 
+border-top-width: 1px; 
+border-bottom-style: solid; 
+border-bottom-width: 1px
+}

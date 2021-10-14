@@ -1,0 +1,53 @@
+.inputbox{
+border: 1px solid #C0C0C0; 
+width:241;
+height:36; 
+border-radius:3px; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px; 
+background-color:#FAFAFA
+}
+
+.BtnLoginClass{
+border:medium none;
+color: #FFFFFF; 
+width:241;
+height:36;background-color: #0095F6;
+border-radius:3px; 
+font-family:Arial; 
+font-size:10pt; 
+font-weight:bold
+}
+
+.bodyBg{
+background-color:#FAFAFA;
+}
+
+.noAccount{
+width:97%;
+height:45px;
+background-color:#FFFFFF;
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px
+}
+
+.mainTable{
+height:301px; 
+width:409px; 
+border: 1px solid #C0C0C0; 
+padding-left: 4px; 
+background-color:#FFFFFF; 
+padding-right: 4px; 
+padding-top: 1px; 
+padding-bottom: 1px;
+}
+
+.table1Home{
+border: 0;
+width: 61%;
+}
