@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faBars, faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link , useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 
 const MyDashBoard = () =>{
@@ -10,15 +11,19 @@ const MyDashBoard = () =>{
     const[posts, setPosts] = useState([]);
 
     let userId = localStorage.getItem('userinfo');
+
     const[username, setUsername] = useState('');
     const[imgUrl, setImgUrl] = useState('');
     const[post, setPost] = useState('');
+    const[base64str, setBase64str] = useState('');
 
     function createNewPost(){
-        let item = {userId, imgUrl, post};
-        fetch('https://instagramklone-restapi.herokuapp.com/api/createpost',{
+        let username = localStorage.getItem('userinfo');
+        let base64str = localStorage.getItem('postImage');
+        let item = {username, post, base64str};
+        fetch('https://m2d3srv.herokuapp.com/api/createpost',{
             method: 'POST',
-            mode : 'cors',
+            mode: 'cors',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -34,13 +39,37 @@ const MyDashBoard = () =>{
         }).catch((error)=>{
             console.error(error);
         })
+        //alert(username);
+    }
+    
+
+    const ConvertToBase64 = async (e) =>{
+        //alert('Uploaded');
+        const file = e.target.files[0];
+        const base64 = await ConvertImageTobase64(file);
+        localStorage.setItem('postImage', base64);
+        //alert(base64);
+    }
+
+    const ConvertImageTobase64 = (file) =>{
+        return new Promise((resolve, reject)=>{
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload =() =>{
+                resolve(fileReader.result);
+            }
+            fileReader.onerror = (error)=>{
+                reject(error);
+            }
+        });
     }
 
     useEffect(() =>{
         let userId =  localStorage.getItem('userinfo');
-        fetch('https://instagramklone-restapi.herokuapp.com/api/posts/'+userId,
+        fetch('https://m2d3srv.herokuapp.com/api/posts/'+userId,
         {
             method: 'GET',
+            mode : 'cors',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -54,13 +83,13 @@ const MyDashBoard = () =>{
     function signOut(){
         //alert('test');
         localStorage.removeItem('userinfo');
-        history.push('/login-page');
+        history.push('/');
         
     }
 
     function LoadHome(){
         let userId =  localStorage.getItem('userinfo');
-        fetch('https://instagramklone-restapi.herokuapp.com/api/posts/'+userId,
+        fetch('https://m2d3srv.herokuapp.com/api/posts/'+userId,
         {
             method: 'GET',
             headers: {
@@ -115,7 +144,7 @@ const MyDashBoard = () =>{
                         <tr>
                             <td height="34">
                                 <p align="left"/>
-                                <input type="file" name="file1" size="73" onChange={(e) =>setImgUrl(e.target.value)} className="fileUploaderClass"/>
+                                <input type="file" name="file1" size="73" onChange={(e) =>ConvertToBase64(e)} className="fileUploaderClass"/>
                             </td>
                         </tr>
                         <tr>
@@ -138,7 +167,7 @@ const MyDashBoard = () =>{
                         <tr>
                             <td height="428">
                             <p align="center"/>
-                            <img border="0" src={post.imgUrl} width="100%" height="100%" className="photoMain" />
+                            <img border="0" src={post.base64str} width="100%" height="100%" className="photoMain" />
                             </td>
                         </tr>
                         <tr>

@@ -4,17 +4,17 @@ import { Link , useHistory } from 'react-router-dom';
 
 const MyRegister = () =>{
 
-    const[mobileNum_email, setmobileNum_email] = useState('');
+    const[username_email, setusername_email] = useState('');
     const[fullname, setFullname] = useState('');
     const[username, setUsername] = useState('');
     const[password, setPassword] = useState('');
     const history = useHistory();
 
     function register(){
-        let item = {mobileNum_email, fullname, username , password};
-        fetch('https://instagramklone-restapi.herokuapp.com/api/register',{
+        let item = {username_email, fullname, username , password};
+        fetch('https://m2d3srv.herokuapp.com/api/register',{
             method : 'POST',
-            mode : 'cors',
+            mode:'cors',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const MyRegister = () =>{
             <div className="register_page">
                 <img border="0" align="center" src="images/images-removebg-preview.png" width="168" height="70" className="InstagramLogo" />
                 <div className="usernameLogin">
-                    <p align="center"><input type="text" name="T1" placeholder=" Mobile Number or email" size="33" onChange ={(e) =>setmobileNum_email(e.target.value)} className="inputBox" /></p>
+                    <p align="center"><input type="text" name="T1" placeholder=" Mobile Number or email" size="33" onChange ={(e) =>setusername_email(e.target.value)} className="inputBox" /></p>
                 </div>
                 <div className="usernameLogin">
                     <p align="center"><input type="text" name="T1" placeholder=" Fullname" size="33" onChange ={(e) =>setFullname(e.target.value)} className="inputBox" /></p>

@@ -9,7 +9,7 @@
 
         function login(){
             let item = {username , password};
-            fetch('https://instagramklone-restapi.herokuapp.com/api/login',{
+            fetch('https://m2d3srv.herokuapp.com/api/login',{
                 method : 'POST',
                 mode : 'cors',
                 headers:{
