@@ -11,6 +11,26 @@ const MyRegister = () =>{
     const history = useHistory();
 
     function register(){
+        if(username_email ==''){
+            alert('Email cannot be empty');
+            return false;
+        }
+
+        if(fullname ==''){
+            alert('Fullname cannot be empty');
+            return false;
+        }
+
+        if(username ==''){
+            alert('Username cannot be empty');
+            return false;
+        }
+
+        if(password ==''){
+            alert('Password cannot be empty');
+            return false;
+        }
+
         let item = {username_email, fullname, username , password};
         fetch('https://m2d3srv.herokuapp.com/api/register',{
             method : 'POST',
@@ -42,16 +62,16 @@ const MyRegister = () =>{
             <div className="register_page">
                 <img border="0" align="center" src="images/images-removebg-preview.png" width="168" height="70" className="InstagramLogo" />
                 <div className="usernameLogin">
-                    <p align="center"><input type="text" name="T1" placeholder=" Mobile Number or email" size="33" onChange ={(e) =>setusername_email(e.target.value)} className="inputBox" /></p>
+                    <p align="center"><input type="text" name="T1" placeholder=" Mobile Number or email" size="33" onChange ={(e) =>setusername_email(e.target.value)} className="inputBox" required /></p>
                 </div>
                 <div className="usernameLogin">
-                    <p align="center"><input type="text" name="T1" placeholder=" Fullname" size="33" onChange ={(e) =>setFullname(e.target.value)} className="inputBox" /></p>
+                    <p align="center"><input type="text" name="T1" placeholder=" Fullname" size="33" onChange ={(e) =>setFullname(e.target.value)} className="inputBox" required/></p>
                 </div>
                 <div className="usernameLogin">
-                    <p align="center"><input type="text" name="T1" placeholder=" Username" size="33" onChange ={(e) =>setUsername(e.target.value)} className="inputBox" /></p>
+                    <p align="center"><input type="text" name="T1" placeholder=" Username" size="33" onChange ={(e) =>setUsername(e.target.value)} className="inputBox" required /></p>
                 </div>
                 <div className="usernameLogin">
-                    <p align="center"><input type="password" name="T1" placeholder=" Password" size="33" onChange ={(e) =>setPassword(e.target.value)} className="inputBox" /></p>
+                    <p align="center"><input type="password" name="T1" placeholder=" Password" size="33" onChange ={(e) =>setPassword(e.target.value)} className="inputBox" required/></p>
                 </div>
                 <div className="usernameLogin">
                     <p align="center"><input onClick={register} type="submit" value="Register" name="B1" class="BtnLoginClass"/></p>

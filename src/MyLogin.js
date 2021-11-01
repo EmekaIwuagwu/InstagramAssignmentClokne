@@ -8,26 +8,35 @@
         const history = useHistory();
 
         function login(){
-            let item = {username , password};
-            fetch('https://m2d3srv.herokuapp.com/api/login',{
-                method : 'POST',
-                mode : 'cors',
-                headers:{
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(item)
-            }).then((response) => response.json())
-            .then((responseJson) =>{
-                if(responseJson.message === 'OK'){
-                    localStorage.setItem('userinfo', username);
-                    history.push('/dashboard');
-                }else{
-                    alert(responseJson.message);
+                if(username ==''){
+                    alert('Username cannot be empty');
+                    return false;
                 }
-            }).catch((error) =>{
-                console.error(error);
-            })
+
+                if(password ==''){
+                    alert('Password cannot be empty');
+                    return false;
+                }
+                let item = {username , password};
+                fetch('https://m2d3srv.herokuapp.com/api/login',{
+                    method : 'POST',
+                    mode : 'cors',
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(item)
+                }).then((response) => response.json())
+                .then((responseJson) =>{
+                    if(responseJson.message === 'OK'){
+                        localStorage.setItem('userinfo', username);
+                        history.push('/dashboard');
+                    }else{
+                        alert(responseJson.message);
+                    }
+                }).catch((error) =>{
+                    console.error(error);
+                })
         }
 
         return (
@@ -39,10 +48,10 @@
                 <div className="login_page">
                     <img border="0" align="center" src="images/images-removebg-preview.png" width="168" height="70" className="InstagramLogo" />
                     <div className="usernameLogin">
-                        <p align="center"><input type="text" name="T1" placeholder="  Phone number, username or email" size="33" onChange ={(e) =>setUsername(e.target.value)} className="inputBox" /></p>
+                        <p align="center"><input type="text" name="T1" placeholder="  Phone number, username or email" size="33" onChange ={(e) =>setUsername(e.target.value)} className="inputBox" required /></p>
                     </div>
                     <div className="usernameLogin">
-                        <p align="center"><input type="password" name="T1" placeholder="  Password" size="33" onChange ={(e) =>setPassword(e.target.value)} className="inputBox" /></p>
+                        <p align="center"><input type="password" name="T1" placeholder="  Password" size="33" onChange ={(e) =>setPassword(e.target.value)} className="inputBox"  required/></p>
                     </div>
                     <div className="usernameLogin">
                         <p align="center"><input onClick={login} type="submit" value="Login" name="B1" className="BtnLoginClass"/></p>
